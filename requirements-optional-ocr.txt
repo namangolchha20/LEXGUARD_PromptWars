@@ -1,0 +1,20 @@
+# =============================================================================
+# LEXGUARD — Optional OCR dependencies (PaddleOCR fallback for scanned PDFs)
+# =============================================================================
+#
+# Install after requirements.txt:
+#   pip install -r requirements-optional-ocr.txt
+#
+# Notes:
+#   - Large download; paddlepaddle wheel varies by OS/CUDA.
+#   - On Windows, CPU-only wheels are typical. GPU requires matching CUDA builds.
+#   - Not required for text-native PDFs or DOCX files.
+#
+# Regenerate full OCR tree:
+#   uv export --package lexguard-ingestion --extra ocr --no-hashes
+# =============================================================================
+
+-r requirements.txt
+
+paddleocr>=2.9.0
+paddlepaddle>=3.0.0

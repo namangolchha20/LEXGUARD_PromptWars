@@ -1,0 +1,41 @@
+[project]
+name = "lexguard-api"
+version = "0.1.0"
+description = "LEXGUARD FastAPI application"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.115.0",
+    "uvicorn[standard]>=0.34.0",
+    "websockets>=14.0",
+    "python-multipart>=0.0.20",
+    "aiofiles>=24.1.0",
+    "lexguard-shared",
+    "lexguard-agents",
+    "lexguard-ai",
+    "lexguard-ingestion",
+    "lexguard-risk",
+    "lexguard-benchmark",
+    "lexguard-orchestrator",
+]
+
+[project.optional-dependencies]
+ocr = ["lexguard-ingestion[ocr]"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/lexguard_api"]
+
+[tool.uv.sources]
+lexguard-shared = { workspace = true }
+lexguard-agents = { workspace = true }
+lexguard-ai = { workspace = true }
+lexguard-ingestion = { workspace = true }
+lexguard-risk = { workspace = true }
+lexguard-benchmark = { workspace = true }
+lexguard-orchestrator = { workspace = true }
+
+[project.scripts]
+lexguard-api = "lexguard_api.main:run"

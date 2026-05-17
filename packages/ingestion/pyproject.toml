@@ -1,0 +1,28 @@
+[project]
+name = "lexguard-ingestion"
+version = "0.1.0"
+description = "Document ingestion pipeline for LEXGUARD"
+requires-python = ">=3.12"
+dependencies = [
+    "lexguard-shared",
+    "pymupdf>=1.25.0",
+    "python-docx>=1.1.0",
+    "pillow>=11.0.0",
+    "aiofiles>=24.1.0",
+]
+
+[project.optional-dependencies]
+ocr = [
+    "paddleocr>=2.9.0",
+    "paddlepaddle>=3.0.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/lexguard_ingestion"]
+
+[tool.uv.sources]
+lexguard-shared = { workspace = true }

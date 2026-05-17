@@ -1,0 +1,62 @@
+[project]
+name = "lexguard"
+version = "0.1.0"
+description = "LEXGUARD monorepo"
+requires-python = ">=3.12"
+dependencies = []
+
+[tool.uv.workspace]
+members = [
+    "apps/api",
+    "workers/analyze-worker",
+    "packages/shared",
+    "packages/agents",
+    "packages/ai",
+    "packages/ingestion",
+    "packages/risk",
+    "packages/benchmark",
+    "packages/orchestrator",
+]
+
+[dependency-groups]
+dev = [
+    "ruff>=0.9.0",
+    "mypy>=1.14.0",
+    "pytest>=8.3.0",
+    "pytest-asyncio>=0.25.0",
+    "httpx>=0.28.0",
+]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+src = ["apps", "packages", "workers"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM", "ASYNC"]
+ignore = ["E501"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+warn_return_any = true
+warn_unused_configs = true
+packages = [
+    "lexguard_shared",
+    "lexguard_agents",
+    "lexguard_ai",
+    "lexguard_ingestion",
+    "lexguard_risk",
+    "lexguard_benchmark",
+    "lexguard_orchestrator",
+    "lexguard_api",
+    "lexguard_analyze_worker",
+]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["apps/api/tests", "packages/ingestion/tests", "packages/agents/tests", "packages/ai/tests", "packages/risk/tests", "packages/benchmark/tests", "packages/orchestrator/tests", "workers"]

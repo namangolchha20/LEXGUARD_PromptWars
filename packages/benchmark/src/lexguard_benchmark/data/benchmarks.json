@@ -1,0 +1,127 @@
+[
+  {
+    "id": "term_notice_period",
+    "clause_types": ["termination"],
+    "metric": "notice_period_days",
+    "label": "Termination notice period",
+    "typical_min": 30,
+    "typical_max": 60,
+    "unit": "days",
+    "description": "Written notice required before terminating the agreement",
+    "keywords": ["notice", "terminate", "termination", "days written"]
+  },
+  {
+    "id": "term_auto_renewal",
+    "clause_types": ["termination"],
+    "metric": "auto_renewal_notice_days",
+    "label": "Auto-renewal opt-out notice",
+    "typical_min": 30,
+    "typical_max": 90,
+    "unit": "days",
+    "description": "Notice window to prevent automatic renewal",
+    "keywords": ["auto-renew", "automatic renewal", "renew", "evergreen"]
+  },
+  {
+    "id": "nc_duration",
+    "clause_types": ["non_compete"],
+    "metric": "non_compete_months",
+    "label": "Non-compete duration",
+    "typical_min": 6,
+    "typical_max": 12,
+    "unit": "months",
+    "description": "Duration of post-employment non-compete restriction",
+    "keywords": ["non-compete", "noncompete", "refrain", "months", "years"]
+  },
+  {
+    "id": "nc_geographic",
+    "clause_types": ["non_compete"],
+    "metric": "geographic_scope",
+    "label": "Non-compete geographic scope",
+    "typical_min": null,
+    "typical_max": null,
+    "unit": "qualitative",
+    "description": "Geographic reach of non-compete — metro/regional vs worldwide",
+    "keywords": ["worldwide", "global", "territory", "geographic", "mile radius"],
+    "qualitative_fair": ["city", "county", "metro", "50 mile", "100 mile", "state"],
+    "qualitative_unfair": ["worldwide", "global", "universe", "any jurisdiction"]
+  },
+  {
+    "id": "pay_net_terms",
+    "clause_types": ["payment"],
+    "metric": "payment_net_days",
+    "label": "Payment terms (net days)",
+    "typical_min": 15,
+    "typical_max": 45,
+    "unit": "days",
+    "description": "Days until payment is due after invoice",
+    "keywords": ["net", "payment due", "days of invoice", "payable within"]
+  },
+  {
+    "id": "liab_cap",
+    "clause_types": ["liability", "indemnification"],
+    "metric": "liability_cap_months",
+    "label": "Liability cap (fees paid)",
+    "typical_min": 6,
+    "typical_max": 12,
+    "unit": "months",
+    "description": "Cap on liability expressed as months of fees",
+    "keywords": ["cap", "limitation of liability", "fees paid", "months", "aggregate"]
+  },
+  {
+    "id": "liab_uncapped",
+    "clause_types": ["liability", "indemnification"],
+    "metric": "uncapped_liability",
+    "label": "Uncapped liability exposure",
+    "typical_min": 0,
+    "typical_max": 0,
+    "unit": "boolean",
+    "description": "Whether unlimited or uncapped liability exists",
+    "keywords": ["unlimited", "uncapped", "without limitation", "consequential damages"]
+  },
+  {
+    "id": "arb_binding",
+    "clause_types": ["arbitration"],
+    "metric": "mandatory_arbitration",
+    "label": "Mandatory binding arbitration",
+    "typical_min": 0,
+    "typical_max": 0,
+    "unit": "boolean",
+    "description": "Requires binding arbitration waiving court access",
+    "keywords": ["binding arbitration", "class action waiver", "jury trial"]
+  },
+  {
+    "id": "conf_duration",
+    "clause_types": ["confidentiality"],
+    "metric": "confidentiality_years",
+    "label": "Confidentiality survival period",
+    "typical_min": 2,
+    "typical_max": 5,
+    "unit": "years",
+    "description": "How long confidentiality survives after termination",
+    "keywords": ["confidential", "survive", "years after", "perpetual"]
+  },
+  {
+    "id": "ip_assignment",
+    "clause_types": ["intellectual_property"],
+    "metric": "ip_assignment_scope",
+    "label": "IP assignment breadth",
+    "typical_min": null,
+    "typical_max": null,
+    "unit": "qualitative",
+    "description": "Scope of IP/work product assignment to counterparty",
+    "keywords": ["assign", "work product", "inventions", "intellectual property", "moral rights"],
+    "qualitative_fair": ["during engagement", "related to services", "work-related"],
+    "qualitative_unfair": ["all inventions", "any time", "moral rights", "entire universe of"]
+  },
+  {
+    "id": "priv_retention",
+    "clause_types": ["privacy"],
+    "metric": "data_retention_months",
+    "label": "Data retention period",
+    "typical_min": 0,
+    "typical_max": 24,
+    "unit": "months",
+    "description": "How long personal data may be retained",
+    "keywords": ["retain", "store", "data retention", "months", "years"]
+  }
+]

@@ -2,6 +2,7 @@
 node_modules/
 .pnpm-store/
 .venv/
+.tools/
 __pycache__/
 *.py[cod]
 *$py.class
@@ -45,14 +46,12 @@ Thumbs.db
 *.log
 logs/
 
-# Ingestion data
-data/temp/
-data/parsed/
-data/clauses/
-data/risk/
-data/consequences/
-data/benchmarks/
-data/orchestrator/
+# Runtime / analysis output (recreated on upload)
+data/*
+!data/.gitkeep
+
+# uv lock artifacts (local)
+.uv/
 
 # Docker
 .docker/
